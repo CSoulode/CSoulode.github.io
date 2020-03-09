@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://blog.csoulode.com</id>
+    <title>CSoulode</title>
+    <updated>2020-03-09T06:51:20.672Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://blog.csoulode.com"/>
+    <link rel="self" href="https://blog.csoulode.com/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://blog.csoulode.com/images/avatar.png</logo>
+    <icon>https://blog.csoulode.com/favicon.ico</icon>
+    <rights>All rights reserved 2020, CSoulode</rights>
+    <entry>
+        <title type="html"><![CDATA[PAT乙级 1002 写出这个数]]></title>
+        <id>https://blog.csoulode.com/post/0NBEIuHyk/</id>
+        <link href="https://blog.csoulode.com/post/0NBEIuHyk/">
+        </link>
+        <updated>2020-03-09T05:10:12.000Z</updated>
+        <content type="html"><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
+<p>输入格式：<br>
+每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10<br>
+​100<br>
+​​ 。</p>
+<p>输出格式：<br>
+在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
+<p>输入样例：<br>
+1234567890987654321123456789</p>
+<p>输出样例：<br>
+yi san wu</p>
+<p>//此题判题程序貌似没有忽略结尾空格，所以需做特判结尾不输出空格</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    string a[10] = {&quot;ling&quot;, &quot;yi&quot;, &quot;er&quot;, &quot;san&quot;, &quot;si&quot;, &quot;wu&quot;, &quot;liu&quot;, &quot;qi&quot;, &quot;ba&quot;, &quot;jiu&quot;};
+    string b;
+    int sum = 0, tmp[3], len = 0;
+    cin &gt;&gt; b;
+    for(int i = 0; i &lt; b.length(); i++) {
+        sum += b[i] - '0';
+    }
+    while(sum != 0){
+        tmp[len++] = sum % 10;
+        sum /= 10;
+    }
+    for(int i = len - 1; i &gt;= 0; i--){
+        cout &lt;&lt; a[tmp[i]];
+        if(i != 0)  cout &lt;&lt; &quot; &quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PAT乙级 1001 害死人不偿命的(3n+1)猜想]]></title>
+        <id>https://blog.csoulode.com/post/mn7-yGncv/</id>
+        <link href="https://blog.csoulode.com/post/mn7-yGncv/">
+        </link>
+        <updated>2020-03-09T03:50:31.000Z</updated>
+        <content type="html"><![CDATA[<p>卡拉兹(Callatz)猜想：</p>
+<p>对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证 (3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
+<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过 1000 的正整数 n，简单地数一下，需要多少步（砍几下）才能得到 n=1？</p>
+<p>输入格式：<br>
+每个测试输入包含 1 个测试用例，即给出正整数 n 的值。</p>
+<p>输出格式：<br>
+输出从 n 计算到 1 需要的步数。</p>
+<p>输入样例：<br>
+3</p>
+<p>输出样例：<br>
+5</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main()
+{
+  int n,step;
+  cin &gt;&gt; n;
+  while(n != 1)
+  {
+    if(n % 2 == 0) n=n/2;
+    else n = (3 * n + 1)/2;
+    step++;
+  }
+  cout &lt;&lt; step;
+
+  return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+</feed>
