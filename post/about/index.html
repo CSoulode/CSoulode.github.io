@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PAT乙级 1002 写出这个数 | CSoulode</title>
+<title>关于 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583741105356">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="PAT乙级 1002 写出这个数 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="关于 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,13 +20,11 @@
 </script>
 
 
-    <meta name="description" content="读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。
-输入格式：
-每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10
-​100
-​​ 。
-输出格式：
-在一行内输出 n 的各位数字之和的每一位..." />
+    <meta name="description" content="
+欢迎来到我的小站呀，很高兴遇见你！❤
+
+📬 欢迎联系我呀
+" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -101,73 +99,40 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              PAT乙级 1002 写出这个数
+              关于
             </h2>
             <div class="post-info">
               <span>
-                2020-03-09
+                2020-03-08
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
-<p>输入格式：<br>
-每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10<br>
-​100<br>
-​​ 。</p>
-<p>输出格式：<br>
-在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
-<p>输入样例：<br>
-1234567890987654321123456789</p>
-<p>输出样例：<br>
-yi san wu</p>
-<p>//此题判题程序貌似没有忽略结尾空格，所以需做特判结尾不输出空格</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main(){
-    string a[10] = {&quot;ling&quot;, &quot;yi&quot;, &quot;er&quot;, &quot;san&quot;, &quot;si&quot;, &quot;wu&quot;, &quot;liu&quot;, &quot;qi&quot;, &quot;ba&quot;, &quot;jiu&quot;};
-    string b;
-    int sum = 0, tmp[3], len = 0;
-    cin &gt;&gt; b;
-    for(int i = 0; i &lt; b.length(); i++) {
-        sum += b[i] - '0';
-    }
-    while(sum != 0){
-        tmp[len++] = sum % 10;
-        sum /= 10;
-    }
-    for(int i = len - 1; i &gt;= 0; i--){
-        cout &lt;&lt; a[tmp[i]];
-        if(i != 0)  cout &lt;&lt; &quot; &quot;;
-    }
-
-    return 0;
-}
-</code></pre>
+                <blockquote>
+<p>欢迎来到我的小站呀，很高兴遇见你！❤</p>
+</blockquote>
+<h2 id="欢迎联系我呀">📬 欢迎联系我呀</h2>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E6%AC%A2%E8%BF%8E%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 欢迎联系我呀</a></li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
         </div>
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://blog.csoulode.com/post/mn7-yGncv/">
-              <h3 class="post-title">
-                PAT乙级 1001 害死人不偿命的(3n+1)猜想
-              </h3>
-            </a>
-          </div>
         
 
         
