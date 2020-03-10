@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | CSoulode</title>
+<title>蓝桥杯 BEGIN-3 入门训练 圆的面积 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583853643237">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BEGIN-3 入门训练 圆的面积 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,12 +20,15 @@
 </script>
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！❤
-
-📬 欢迎联系我呀
-" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="问题描述
+给定圆的半径r，求圆的面积。
+输入格式
+输入包含一个整数r，表示圆的半径。
+输出格式
+输出一行，包含一个实数，四舍五入保留小数点后7位，表示圆的面积。
+说明：在本题中，输入是一个整数，但是输出是一个实数。
+对于实数输出的问题，请一..." />
+    <meta name="keywords" content="蓝桥杯(入门训练)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -99,40 +102,70 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              蓝桥杯 BEGIN-3 入门训练 圆的面积
             </h2>
             <div class="post-info">
               <span>
-                2020-03-08
+                2020-03-10
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
+              
+                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ru-men-xun-lian/" class="post-tag">
+                  # 蓝桥杯(入门训练)
+                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！❤</p>
-</blockquote>
-<h2 id="欢迎联系我呀">📬 欢迎联系我呀</h2>
+                <p>问题描述<br>
+给定圆的半径r，求圆的面积。</p>
+<p>输入格式<br>
+输入包含一个整数r，表示圆的半径。</p>
+<p>输出格式<br>
+输出一行，包含一个实数，四舍五入保留小数点后7位，表示圆的面积。<br>
+说明：在本题中，输入是一个整数，但是输出是一个实数。</p>
+<p>对于实数输出的问题，请一定看清楚实数输出的要求，比如本题中要求保留小数点后7位，则你的程序必须严格的输出7位小数，输出过多或者过少的小数位数都是不行的，都会被认为错误。</p>
+<p>实数输出的问题如果没有特别说明，舍入都是按四舍五入进行。</p>
+<p>样例输入<br>
+4</p>
+<p>样例输出<br>
+50.2654825</p>
+<p>数据规模与约定<br>
+1 &lt;= r &lt;= 10000。</p>
+<p>提示<br>
+本题对精度要求较高，请注意π的值应该取较精确的值。你可以使用常量来表示π，比如PI=3.14159265358979323，也可以使用数学公式来求π，比如PI=atan(1.0)*4。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    printf(&quot;%.7lf&quot;, atan(1.0)*4 * n * n);
+
+    return 0;
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%AC%A2%E8%BF%8E%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 欢迎联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.csoulode.com/post/ih27xI1j6/">
+              <h3 class="post-title">
+                蓝桥杯 BEGIN-2 入门训练 序列求和
+              </h3>
+            </a>
+          </div>
         
 
         

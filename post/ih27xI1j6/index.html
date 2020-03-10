@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | CSoulode</title>
+<title>蓝桥杯 BEGIN-2 入门训练 序列求和 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583853643237">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BEGIN-2 入门训练 序列求和 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,12 +20,23 @@
 </script>
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！❤
-
-📬 欢迎联系我呀
-" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="问题描述
+求1+2+3+...+n的值。
+输入格式
+输入包括一个整数n。
+输出格式
+输出一行，包括一个整数，表示1+2+3+...+n的值。
+样例输入
+4
+样例输出
+10
+样例输入
+100
+样例输出
+5050
+数据规模与约定
+1 &lt;=..." />
+    <meta name="keywords" content="蓝桥杯(入门训练)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -99,40 +110,74 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              蓝桥杯 BEGIN-2 入门训练 序列求和
             </h2>
             <div class="post-info">
               <span>
-                2020-03-08
+                2020-03-10
               </span>
               <span>
                 1 min read
               </span>
               
+                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ru-men-xun-lian/" class="post-tag">
+                  # 蓝桥杯(入门训练)
+                </a>
+              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！❤</p>
-</blockquote>
-<h2 id="欢迎联系我呀">📬 欢迎联系我呀</h2>
+                <p>问题描述<br>
+求1+2+3+...+n的值。</p>
+<p>输入格式<br>
+输入包括一个整数n。</p>
+<p>输出格式<br>
+输出一行，包括一个整数，表示1+2+3+...+n的值。</p>
+<p>样例输入<br>
+4<br>
+样例输出<br>
+10</p>
+<p>样例输入<br>
+100<br>
+样例输出<br>
+5050</p>
+<p>数据规模与约定<br>
+1 &lt;= n &lt;= 1,000,000,000。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+unsigned long long n, a, i = 1;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cin &gt;&gt; n;
+    for(i; i &lt;= n; i++)
+        a += i;
+    cout &lt;&lt; a &lt;&lt; endl;
+    
+    return 0;
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%AC%A2%E8%BF%8E%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 欢迎联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.csoulode.com/post/vJtmP9-JI/">
+              <h3 class="post-title">
+                蓝桥杯 BEGIN-1  入门训练 A+B问题
+              </h3>
+            </a>
+          </div>
         
 
         

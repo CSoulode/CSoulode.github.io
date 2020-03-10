@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.csoulode.com</id>
     <title>CSoulode</title>
-    <updated>2020-03-09T09:00:09.283Z</updated>
+    <updated>2020-03-10T15:21:45.025Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.csoulode.com"/>
     <link rel="self" href="https://blog.csoulode.com/atom.xml"/>
@@ -10,6 +10,157 @@
     <logo>https://blog.csoulode.com/images/avatar.png</logo>
     <icon>https://blog.csoulode.com/favicon.ico</icon>
     <rights>All rights reserved 2020, CSoulode</rights>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BEGIN-4 入门训练 Fibonacci数列]]></title>
+        <id>https://blog.csoulode.com/post/oBfh54MWL/</id>
+        <link href="https://blog.csoulode.com/post/oBfh54MWL/">
+        </link>
+        <updated>2020-03-10T15:13:53.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+Fibonacci数列的递推公式为：Fn=Fn-1+Fn-2，其中F1=F2=1。</p>
+<p>当n比较大时，Fn也非常大，现在我们想知道，Fn除以10007的余数是多少。</p>
+<p>输入格式<br>
+输入包含一个整数n。</p>
+<p>输出格式<br>
+输出一行，包含一个整数，表示Fn除以10007的余数。</p>
+<p>说明：在本题中，答案是要求Fn除以10007的余数，因此我们只要能算出这个余数即可，而不需要先计算出Fn的准确值，再将计算的结果除以10007取余数，直接计算余数往往比先算出原数再取余简单。</p>
+<p>样例输入<br>
+10<br>
+样例输出<br>
+55</p>
+<p>样例输入<br>
+22<br>
+样例输出<br>
+7704</p>
+<p>数据规模与约定<br>
+1 &lt;= n &lt;= 1,000,000。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int ans[1000001] = {0, 1, 1};
+
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 3; i &lt;= n; i++){
+        ans[i] = (ans[i - 1] + ans[i - 2]) % 10007;
+    }
+    cout &lt;&lt; ans[n] &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BEGIN-3 入门训练 圆的面积]]></title>
+        <id>https://blog.csoulode.com/post/OkNEy0ohD/</id>
+        <link href="https://blog.csoulode.com/post/OkNEy0ohD/">
+        </link>
+        <updated>2020-03-10T15:09:41.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+给定圆的半径r，求圆的面积。</p>
+<p>输入格式<br>
+输入包含一个整数r，表示圆的半径。</p>
+<p>输出格式<br>
+输出一行，包含一个实数，四舍五入保留小数点后7位，表示圆的面积。<br>
+说明：在本题中，输入是一个整数，但是输出是一个实数。</p>
+<p>对于实数输出的问题，请一定看清楚实数输出的要求，比如本题中要求保留小数点后7位，则你的程序必须严格的输出7位小数，输出过多或者过少的小数位数都是不行的，都会被认为错误。</p>
+<p>实数输出的问题如果没有特别说明，舍入都是按四舍五入进行。</p>
+<p>样例输入<br>
+4</p>
+<p>样例输出<br>
+50.2654825</p>
+<p>数据规模与约定<br>
+1 &lt;= r &lt;= 10000。</p>
+<p>提示<br>
+本题对精度要求较高，请注意π的值应该取较精确的值。你可以使用常量来表示π，比如PI=3.14159265358979323，也可以使用数学公式来求π，比如PI=atan(1.0)*4。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    printf(&quot;%.7lf&quot;, atan(1.0)*4 * n * n);
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BEGIN-2 入门训练 序列求和]]></title>
+        <id>https://blog.csoulode.com/post/ih27xI1j6/</id>
+        <link href="https://blog.csoulode.com/post/ih27xI1j6/">
+        </link>
+        <updated>2020-03-10T15:05:23.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+求1+2+3+...+n的值。</p>
+<p>输入格式<br>
+输入包括一个整数n。</p>
+<p>输出格式<br>
+输出一行，包括一个整数，表示1+2+3+...+n的值。</p>
+<p>样例输入<br>
+4<br>
+样例输出<br>
+10</p>
+<p>样例输入<br>
+100<br>
+样例输出<br>
+5050</p>
+<p>数据规模与约定<br>
+1 &lt;= n &lt;= 1,000,000,000。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+unsigned long long n, a, i = 1;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cin &gt;&gt; n;
+    for(i; i &lt;= n; i++)
+        a += i;
+    cout &lt;&lt; a &lt;&lt; endl;
+    
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BEGIN-1  入门训练 A+B问题]]></title>
+        <id>https://blog.csoulode.com/post/vJtmP9-JI/</id>
+        <link href="https://blog.csoulode.com/post/vJtmP9-JI/">
+        </link>
+        <updated>2020-03-10T14:52:32.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+输入A、B，输出A+B。</p>
+<p>输入格式<br>
+输入的第一行包括两个整数，由空格分隔，分别表示A、B。</p>
+<p>输出格式<br>
+输出一行，包括一个整数，表示A+B的值。</p>
+<p>样例输入<br>
+12 45</p>
+<p>样例输出<br>
+57</p>
+<p>数据规模与约定<br>
+-10000 &lt;= A, B &lt;= 10000。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    ios::sync_with_stdio(false);    //本行与下一行是加快cin,cout(虽说本题用不上2333)
+    cin.tie(0); 
+    int a, b;
+    cin &gt;&gt; a &gt;&gt; b;
+    cout &lt;&lt; a + b &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[PAT乙级 1002 写出这个数]]></title>
         <id>https://blog.csoulode.com/post/0NBEIuHyk/</id>

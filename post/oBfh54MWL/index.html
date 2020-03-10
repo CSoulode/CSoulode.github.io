@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | CSoulode</title>
+<title>蓝桥杯 BEGIN-4 入门训练 Fibonacci数列 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583853643237">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BEGIN-4 入门训练 Fibonacci数列 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,12 +20,14 @@
 </script>
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！❤
-
-📬 欢迎联系我呀
-" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="问题描述
+Fibonacci数列的递推公式为：Fn=Fn-1+Fn-2，其中F1=F2=1。
+当n比较大时，Fn也非常大，现在我们想知道，Fn除以10007的余数是多少。
+输入格式
+输入包含一个整数n。
+输出格式
+输出一行，包含一个整数，表..." />
+    <meta name="keywords" content="蓝桥杯(入门训练)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -99,40 +101,76 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              蓝桥杯 BEGIN-4 入门训练 Fibonacci数列
             </h2>
             <div class="post-info">
               <span>
-                2020-03-08
+                2020-03-10
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
+              
+                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ru-men-xun-lian/" class="post-tag">
+                  # 蓝桥杯(入门训练)
+                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！❤</p>
-</blockquote>
-<h2 id="欢迎联系我呀">📬 欢迎联系我呀</h2>
+                <p>问题描述<br>
+Fibonacci数列的递推公式为：Fn=Fn-1+Fn-2，其中F1=F2=1。</p>
+<p>当n比较大时，Fn也非常大，现在我们想知道，Fn除以10007的余数是多少。</p>
+<p>输入格式<br>
+输入包含一个整数n。</p>
+<p>输出格式<br>
+输出一行，包含一个整数，表示Fn除以10007的余数。</p>
+<p>说明：在本题中，答案是要求Fn除以10007的余数，因此我们只要能算出这个余数即可，而不需要先计算出Fn的准确值，再将计算的结果除以10007取余数，直接计算余数往往比先算出原数再取余简单。</p>
+<p>样例输入<br>
+10<br>
+样例输出<br>
+55</p>
+<p>样例输入<br>
+22<br>
+样例输出<br>
+7704</p>
+<p>数据规模与约定<br>
+1 &lt;= n &lt;= 1,000,000。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int ans[1000001] = {0, 1, 1};
+
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 3; i &lt;= n; i++){
+        ans[i] = (ans[i - 1] + ans[i - 2]) % 10007;
+    }
+    cout &lt;&lt; ans[n] &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%AC%A2%E8%BF%8E%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 欢迎联系我呀</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.csoulode.com/post/OkNEy0ohD/">
+              <h3 class="post-title">
+                蓝桥杯 BEGIN-3 入门训练 圆的面积
+              </h3>
+            </a>
+          </div>
         
 
         
