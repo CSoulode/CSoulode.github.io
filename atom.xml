@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.csoulode.com</id>
     <title>CSoulode</title>
-    <updated>2020-03-11T03:37:56.719Z</updated>
+    <updated>2020-03-11T21:53:37.464Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.csoulode.com"/>
     <link rel="self" href="https://blog.csoulode.com/atom.xml"/>
@@ -10,6 +10,169 @@
     <logo>https://blog.csoulode.com/images/avatar.png</logo>
     <icon>https://blog.csoulode.com/favicon.ico</icon>
     <rights>All rights reserved 2020, CSoulode</rights>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-9 基础练习 特殊回文数]]></title>
+        <id>https://blog.csoulode.com/post/MdQRXoRC7/</id>
+        <link href="https://blog.csoulode.com/post/MdQRXoRC7/">
+        </link>
+        <updated>2020-03-11T21:52:00.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+　　123321是一个非常特殊的数，它从左边读和从右边读是一样的。<br>
+　　输入一个正整数n， 编程求所有这样的五位和六位十进制数，满足各位数字之和等于n 。</p>
+<p>输入格式<br>
+　　输入一行，包含一个正整数n。</p>
+<p>输出格式<br>
+　　按从小到大的顺序输出满足条件的整数，每个整数占一行。</p>
+<p>样例输入<br>
+52</p>
+<p>样例输出<br>
+899998<br>
+989989<br>
+998899</p>
+<p>数据规模和约定<br>
+1&lt;=n&lt;=54。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int n;
+int main(){
+    cin &gt;&gt; n;
+    for(int i = 1; i &lt;= 9; i++){
+        for(int j = 0; j &lt;= 9; j++){
+            for(int k = 0; k &lt;= 9; k++){
+                if(i + j + k + i + j == n){
+                    cout &lt;&lt; i &lt;&lt; j &lt;&lt; k &lt;&lt; j &lt;&lt; i &lt;&lt; endl;
+                }
+            }
+        }
+    }
+    for(int i = 1; i &lt;= 9; i++){
+        for(int j = 0; j &lt;= 9; j++){
+            for(int k = 0; k &lt;= 9; k++){
+                if(i + j + k + i + j + k== n){
+                    cout &lt;&lt; i &lt;&lt; j &lt;&lt; k &lt;&lt; k &lt;&lt; j &lt;&lt; i &lt;&lt; endl;
+                }
+            }
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-8 基础练习 回文数]]></title>
+        <id>https://blog.csoulode.com/post/ylhNcI6fo/</id>
+        <link href="https://blog.csoulode.com/post/ylhNcI6fo/">
+        </link>
+        <updated>2020-03-11T21:50:17.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。</p>
+<p>输出格式<br>
+　　按从小到大的顺序输出满足条件的四位十进制数。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    for(int i = 1; i &lt;= 9; i++){
+        for(int j = 0; j &lt;= 9; j++){
+            if(i + j == j + i){
+                cout &lt;&lt; i &lt;&lt; j &lt;&lt; j &lt;&lt; i &lt;&lt; endl;
+            }
+        }
+    }
+
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-7 基础练习 特殊的数字]]></title>
+        <id>https://blog.csoulode.com/post/7P_9MuEYy/</id>
+        <link href="https://blog.csoulode.com/post/7P_9MuEYy/">
+        </link>
+        <updated>2020-03-11T21:48:36.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+　　153是一个非常特殊的数，它等于它的每位数字的立方和，即153=1<em>1</em>1+5<em>5</em>5+3<em>3</em>3。编程求所有满足这种条件的三位十进制数。</p>
+<p>输出格式<br>
+　　按从小到大的顺序输出满足条件的三位十进制数，每个数占一行。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    for(int i = 100; i &lt;= 999; i++){
+        int tmp = i;
+        int tmp1 = tmp % 10;
+        tmp /= 10;
+        int tmp2 = tmp % 10;
+        tmp /= 10;
+        int tmp3 = tmp % 10;
+        if(i == tmp1 * tmp1 * tmp1 + tmp2 * tmp2 * tmp2 + tmp3 * tmp3 * tmp3){
+            cout &lt;&lt; i &lt;&lt; endl;
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-6 基础练习 杨辉三角形]]></title>
+        <id>https://blog.csoulode.com/post/4EkchsPGF/</id>
+        <link href="https://blog.csoulode.com/post/4EkchsPGF/">
+        </link>
+        <updated>2020-03-11T21:46:25.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+杨辉三角形又称Pascal三角形，它的第i+1行是(a+b)i的展开式的系数。　<br>
+它的一个重要性质是：三角形中的每个数字等于它两肩上的数字相加。<br>
+下面给出了杨辉三角形的前4行：<br>
+1<br>
+1 1<br>
+1 2 1<br>
+1 3 3 1<br>
+给出n，输出它的前n行。</p>
+<p>输入格式<br>
+输入包含一个数n。</p>
+<p>输出格式<br>
+输出杨辉三角形的前n行。每一行从这一行的第一个数开始依次输出，中间使用一个空格分隔。请不要在前面输出多余的空格。</p>
+<p>样例输入<br>
+4</p>
+<p>样例输出<br>
+1<br>
+1 1<br>
+1 2 1<br>
+1 3 3 1</p>
+<p>数据规模与约定<br>
+1 &lt;= n &lt;= 34。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int a[35][35];
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 1; i &lt;= n; i++){
+        a[i][1] = a[i][i] = 1;
+        for(int j = 2; j &lt; i; j++){
+            a[i][j] = a[i - 1][j - 1] + a[i - 1][j];
+        }
+    }
+    for(int i = 1; i &lt;= n; i++){
+        for(int j = 1; j &lt;= i; j++){
+            cout &lt;&lt; a[i][j] &lt;&lt; &quot; &quot;;
+        }
+        cout &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[蓝桥杯 BASIC-5 基础练习 查找整数]]></title>
         <id>https://blog.csoulode.com/post/w_PDE9xFW/</id>
@@ -302,158 +465,6 @@ int main(){
         ans[i] = (ans[i - 1] + ans[i - 2]) % 10007;
     }
     cout &lt;&lt; ans[n] &lt;&lt; endl;
-
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[蓝桥杯 BEGIN-3 入门训练 圆的面积]]></title>
-        <id>https://blog.csoulode.com/post/OkNEy0ohD/</id>
-        <link href="https://blog.csoulode.com/post/OkNEy0ohD/">
-        </link>
-        <updated>2020-03-10T15:09:41.000Z</updated>
-        <content type="html"><![CDATA[<p>问题描述<br>
-给定圆的半径r，求圆的面积。</p>
-<p>输入格式<br>
-输入包含一个整数r，表示圆的半径。</p>
-<p>输出格式<br>
-输出一行，包含一个实数，四舍五入保留小数点后7位，表示圆的面积。<br>
-说明：在本题中，输入是一个整数，但是输出是一个实数。</p>
-<p>对于实数输出的问题，请一定看清楚实数输出的要求，比如本题中要求保留小数点后7位，则你的程序必须严格的输出7位小数，输出过多或者过少的小数位数都是不行的，都会被认为错误。</p>
-<p>实数输出的问题如果没有特别说明，舍入都是按四舍五入进行。</p>
-<p>样例输入<br>
-4</p>
-<p>样例输出<br>
-50.2654825</p>
-<p>数据规模与约定<br>
-1 &lt;= r &lt;= 10000。</p>
-<p>提示<br>
-本题对精度要求较高，请注意π的值应该取较精确的值。你可以使用常量来表示π，比如PI=3.14159265358979323，也可以使用数学公式来求π，比如PI=atan(1.0)*4。</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main(){
-    int n;
-    cin &gt;&gt; n;
-    printf(&quot;%.7lf&quot;, atan(1.0)*4 * n * n);
-
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[蓝桥杯 BEGIN-2 入门训练 序列求和]]></title>
-        <id>https://blog.csoulode.com/post/ih27xI1j6/</id>
-        <link href="https://blog.csoulode.com/post/ih27xI1j6/">
-        </link>
-        <updated>2020-03-10T15:05:23.000Z</updated>
-        <content type="html"><![CDATA[<p>问题描述<br>
-求1+2+3+...+n的值。</p>
-<p>输入格式<br>
-输入包括一个整数n。</p>
-<p>输出格式<br>
-输出一行，包括一个整数，表示1+2+3+...+n的值。</p>
-<p>样例输入<br>
-4<br>
-样例输出<br>
-10</p>
-<p>样例输入<br>
-100<br>
-样例输出<br>
-5050</p>
-<p>数据规模与约定<br>
-1 &lt;= n &lt;= 1,000,000,000。</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-unsigned long long n, a, i = 1;
-
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cin &gt;&gt; n;
-    for(i; i &lt;= n; i++)
-        a += i;
-    cout &lt;&lt; a &lt;&lt; endl;
-    
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[蓝桥杯 BEGIN-1  入门训练 A+B问题]]></title>
-        <id>https://blog.csoulode.com/post/vJtmP9-JI/</id>
-        <link href="https://blog.csoulode.com/post/vJtmP9-JI/">
-        </link>
-        <updated>2020-03-10T14:52:32.000Z</updated>
-        <content type="html"><![CDATA[<p>问题描述<br>
-输入A、B，输出A+B。</p>
-<p>输入格式<br>
-输入的第一行包括两个整数，由空格分隔，分别表示A、B。</p>
-<p>输出格式<br>
-输出一行，包括一个整数，表示A+B的值。</p>
-<p>样例输入<br>
-12 45</p>
-<p>样例输出<br>
-57</p>
-<p>数据规模与约定<br>
--10000 &lt;= A, B &lt;= 10000。</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main(){
-    ios::sync_with_stdio(false);    //本行与下一行是加快cin,cout(虽说本题用不上2333)
-    cin.tie(0); 
-    int a, b;
-    cin &gt;&gt; a &gt;&gt; b;
-    cout &lt;&lt; a + b &lt;&lt; endl;
-
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PAT乙级 1002 写出这个数]]></title>
-        <id>https://blog.csoulode.com/post/0NBEIuHyk/</id>
-        <link href="https://blog.csoulode.com/post/0NBEIuHyk/">
-        </link>
-        <updated>2020-03-09T05:10:12.000Z</updated>
-        <content type="html"><![CDATA[<p>读入一个正整数 n，计算其各位数字之和，用汉语拼音写出和的每一位数字。</p>
-<p>输入格式：<br>
-每个测试输入包含 1 个测试用例，即给出自然数 n 的值。这里保证 n 小于 10<br>
-​100<br>
-​​ 。</p>
-<p>输出格式：<br>
-在一行内输出 n 的各位数字之和的每一位，拼音数字间有 1 空格，但一行中最后一个拼音数字后没有空格。</p>
-<p>输入样例：<br>
-1234567890987654321123456789</p>
-<p>输出样例：<br>
-yi san wu</p>
-<p>//此题判题程序貌似没有忽略结尾空格，所以需做特判结尾不输出空格</p>
-<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
-using namespace std;
-
-int main(){
-    string a[10] = {&quot;ling&quot;, &quot;yi&quot;, &quot;er&quot;, &quot;san&quot;, &quot;si&quot;, &quot;wu&quot;, &quot;liu&quot;, &quot;qi&quot;, &quot;ba&quot;, &quot;jiu&quot;};
-    string b;
-    int sum = 0, tmp[3], len = 0;
-    cin &gt;&gt; b;
-    for(int i = 0; i &lt; b.length(); i++) {
-        sum += b[i] - '0';
-    }
-    while(sum != 0){
-        tmp[len++] = sum % 10;
-        sum /= 10;
-    }
-    for(int i = len - 1; i &gt;= 0; i--){
-        cout &lt;&lt; a[tmp[i]];
-        if(i != 0)  cout &lt;&lt; &quot; &quot;;
-    }
 
     return 0;
 }

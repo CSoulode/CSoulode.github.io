@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PAT乙级 1001 害死人不偿命的(3n+1)猜想 | CSoulode</title>
+<title>蓝桥杯 BASIC-8 基础练习 回文数 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583963605704">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="PAT乙级 1001 害死人不偿命的(3n+1)猜想 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BASIC-8 基础练习 回文数 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,9 +20,13 @@
 </script>
 
 
-    <meta name="description" content="卡拉兹(Callatz)猜想：
-对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传..." />
-    <meta name="keywords" content="PAT乙级(Basic Level)" />
+    <meta name="description" content="问题描述
+　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。
+输出格式
+　　按从小到大的顺序输出满足条件的四位十进制数。
+#include &lt;bits/stdc++.h&gt;
+using n..." />
+    <meta name="keywords" content="蓝桥杯(基础练习)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -96,51 +100,42 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              PAT乙级 1001 害死人不偿命的(3n+1)猜想
+              蓝桥杯 BASIC-8 基础练习 回文数
             </h2>
             <div class="post-info">
               <span>
-                2020-03-09
+                2020-03-12
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://blog.csoulode.com/tag/pat-yi-ji-basic-level/" class="post-tag">
-                  # PAT乙级(Basic Level)
+                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ji-chu-lian-xi/" class="post-tag">
+                  # 蓝桥杯(基础练习)
                 </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>卡拉兹(Callatz)猜想：</p>
-<p>对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证 (3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
-<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过 1000 的正整数 n，简单地数一下，需要多少步（砍几下）才能得到 n=1？</p>
-<p>输入格式：<br>
-每个测试输入包含 1 个测试用例，即给出正整数 n 的值。</p>
-<p>输出格式：<br>
-输出从 n 计算到 1 需要的步数。</p>
-<p>输入样例：<br>
-3</p>
-<p>输出样例：<br>
-5</p>
+                <p>问题描述<br>
+　　1221是一个非常特殊的数，它从左边读和从右边读是一样的，编程求所有这样的四位十进制数。</p>
+<p>输出格式<br>
+　　按从小到大的顺序输出满足条件的四位十进制数。</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 
-int main()
-{
-  int n,step;
-  cin &gt;&gt; n;
-  while(n != 1)
-  {
-    if(n % 2 == 0) n=n/2;
-    else n = (3 * n + 1)/2;
-    step++;
-  }
-  cout &lt;&lt; step;
+int main(){
+    for(int i = 1; i &lt;= 9; i++){
+        for(int j = 0; j &lt;= 9; j++){
+            if(i + j == j + i){
+                cout &lt;&lt; i &lt;&lt; j &lt;&lt; j &lt;&lt; i &lt;&lt; endl;
+            }
+        }
+    }
 
-  return 0;
+
+    return 0;
 }
 </code></pre>
 
@@ -152,6 +147,15 @@ int main()
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.csoulode.com/post/7P_9MuEYy/">
+              <h3 class="post-title">
+                蓝桥杯 BASIC-7 基础练习 特殊的数字
+              </h3>
+            </a>
+          </div>
         
 
         
