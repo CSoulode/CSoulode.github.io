@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>蓝桥杯 BEGIN-2 入门训练 序列求和 | CSoulode</title>
+<title>蓝桥杯 BASIC-4 基础练习 数列特征 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583897842292">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BEGIN-2 入门训练 序列求和 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BASIC-4 基础练习 数列特征 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -21,22 +21,13 @@
 
 
     <meta name="description" content="问题描述
-求1+2+3+...+n的值。
+给出n个数，找出这n个数的最大值，最小值，和。
 输入格式
-输入包括一个整数n。
+第一行为整数n，表示数的个数。
+第二行有n个数，为给定的n个数，每个数的绝对值都小于10000。
 输出格式
-输出一行，包括一个整数，表示1+2+3+...+n的值。
-样例输入
-4
-样例输出
-10
-样例输入
-100
-样例输出
-5050
-数据规模与约定
-1 &lt;=..." />
-    <meta name="keywords" content="蓝桥杯(入门训练)" />
+输出三行，每行一个整数。第一行表示这些数中的最大值，第二行表示这..." />
+    <meta name="keywords" content="蓝桥杯(基础练习)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -110,18 +101,18 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              蓝桥杯 BEGIN-2 入门训练 序列求和
+              蓝桥杯 BASIC-4 基础练习 数列特征
             </h2>
             <div class="post-info">
               <span>
-                2020-03-10
+                2020-03-11
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
-                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ru-men-xun-lian/" class="post-tag">
-                  # 蓝桥杯(入门训练)
+                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ji-chu-lian-xi/" class="post-tag">
+                  # 蓝桥杯(基础练习)
                 </a>
               
             </div>
@@ -129,34 +120,38 @@
             <div class="post-content-wrapper">
               <div class="post-content">
                 <p>问题描述<br>
-求1+2+3+...+n的值。</p>
+给出n个数，找出这n个数的最大值，最小值，和。</p>
 <p>输入格式<br>
-输入包括一个整数n。</p>
+第一行为整数n，表示数的个数。<br>
+第二行有n个数，为给定的n个数，每个数的绝对值都小于10000。</p>
 <p>输出格式<br>
-输出一行，包括一个整数，表示1+2+3+...+n的值。</p>
+输出三行，每行一个整数。第一行表示这些数中的最大值，第二行表示这些数中的最小值，第三行表示这些数的和。</p>
 <p>样例输入<br>
-4<br>
-样例输出<br>
-10</p>
-<p>样例输入<br>
-100<br>
-样例输出<br>
-5050</p>
+5<br>
+1 3 -2 4 5</p>
+<p>样例输出<br>
+5<br>
+-2<br>
+11</p>
 <p>数据规模与约定<br>
-1 &lt;= n &lt;= 1,000,000,000。</p>
+1 &lt;= n &lt;= 10000。</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 
-unsigned long long n, a, i = 1;
-
+int a[10001];
 int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
+    int n;
     cin &gt;&gt; n;
-    for(i; i &lt;= n; i++)
-        a += i;
-    cout &lt;&lt; a &lt;&lt; endl;
-    
+    for(int i = 0; i &lt; n; i++)
+        cin &gt;&gt; a[i];
+    sort(a, a + n);
+    int sum = 0;
+    for(int i = 0; i &lt; n; i++)
+        sum += a[i];
+    cout &lt;&lt; a[n - 1] &lt;&lt; endl;
+    cout &lt;&lt; a[0] &lt;&lt; endl;
+    cout &lt;&lt; sum &lt;&lt; endl;
+
     return 0;
 }
 </code></pre>
@@ -172,9 +167,9 @@ int main(){
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://blog.csoulode.com/post/vJtmP9-JI/">
+            <a href="https://blog.csoulode.com/post/tQZ3n6VwS/">
               <h3 class="post-title">
-                蓝桥杯 BEGIN-1  入门训练 A+B问题
+                蓝桥杯 BASIC-3 基础练习 字母图形
               </h3>
             </a>
           </div>
