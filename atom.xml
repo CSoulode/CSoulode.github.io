@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.csoulode.com</id>
     <title>CSoulode</title>
-    <updated>2020-03-10T15:21:45.025Z</updated>
+    <updated>2020-03-11T03:32:03.200Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.csoulode.com"/>
     <link rel="self" href="https://blog.csoulode.com/atom.xml"/>
@@ -10,6 +10,218 @@
     <logo>https://blog.csoulode.com/images/avatar.png</logo>
     <icon>https://blog.csoulode.com/favicon.ico</icon>
     <rights>All rights reserved 2020, CSoulode</rights>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-5 基础练习 查找整数]]></title>
+        <id>https://blog.csoulode.com/post/w_PDE9xFW/</id>
+        <link href="https://blog.csoulode.com/post/w_PDE9xFW/">
+        </link>
+        <updated>2020-03-11T03:30:11.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+给出一个包含n个整数的数列，问整数a在数列中的第一次出现是第几个。</p>
+<p>输入格式<br>
+第一行包含一个整数n。<br>
+第二行包含n个非负整数，为给定的数列，数列中的每个数都不大于10000。<br>
+第三行包含一个整数a，为待查找的数。</p>
+<p>输出格式<br>
+如果a在数列中出现了，输出它第一次出现的位置(位置从1开始编号)，否则输出-1。</p>
+<p>样例输入<br>
+6<br>
+1 9 4 8 3 9<br>
+9</p>
+<p>样例输出<br>
+2</p>
+<p>数据规模与约定<br>
+1 &lt;= n &lt;= 1000。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int a[1001];
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    for(int i = 1; i &lt;= n; i++)
+        cin &gt;&gt; a[i];
+    int b, flag = 0;
+    cin &gt;&gt; b;
+    for(int i = 1; i &lt;= n; i++){
+        if(b == a[i]){
+            cout &lt;&lt; i;
+            flag = 1;
+            break;
+        }
+    }
+    if(flag == 0){
+        cout &lt;&lt; &quot;-1&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-3 基础练习 字母图形]]></title>
+        <id>https://blog.csoulode.com/post/tQZ3n6VwS/</id>
+        <link href="https://blog.csoulode.com/post/tQZ3n6VwS/">
+        </link>
+        <updated>2020-03-11T03:27:05.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+利用字母可以组成一些美丽的图形，下面给出了一个例子：<br>
+ABCDEFG<br>
+BABCDEF<br>
+CBABCDE<br>
+DCBABCD<br>
+EDCBABC<br>
+这是一个5行7列的图形，请找出这个图形的规律，并输出一个n行m列的图形。</p>
+<p>输入格式<br>
+输入一行，包含两个整数n和m，分别表示你要输出的图形的行数的列数。</p>
+<p>输出格式<br>
+输出n行，每个m个字符，为你的图形。</p>
+<p>样例输入<br>
+5 7</p>
+<p>样例输出<br>
+ABCDEFG<br>
+BABCDEF<br>
+CBABCDE<br>
+DCBABCD<br>
+EDCBABC</p>
+<p>数据规模与约定<br>
+1 &lt;= n, m &lt;= 26。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int n, m;
+char a[27][27];
+int main(){
+    cin &gt;&gt; n &gt;&gt; m;
+    int flag = 0;
+    if(n &gt; m){
+        int tmp = n;
+        n = m;
+        m = tmp;
+        flag = 1;
+    }
+    for(int i = 0; i &lt; n; i++){
+        for(int j = 0; j &lt; m; j++){
+            if(i == 0){
+                a[i][j] = 'A' + j;
+            }
+            else{
+                if(j == 0){
+                    a[i][j] = a[0][i];
+                }
+                else{
+                    a[i][j] = a[i - 1][j - 1];
+                }
+            }
+        }
+    }
+    if(!flag){
+        for(int i = 0; i &lt; n; i++){
+            for(int j = 0; j &lt; m; j++){
+                cout &lt;&lt; a[i][j];
+            }
+            cout &lt;&lt; endl;
+        }
+    }
+    else{
+        for(int i = 0; i &lt; m; i++){
+            for(int j = 0; j &lt; n; j++){
+                cout &lt;&lt; a[j][i];
+            }
+            cout &lt;&lt; endl;
+        }
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-2 基础练习 01字串]]></title>
+        <id>https://blog.csoulode.com/post/VtVwfhDnb/</id>
+        <link href="https://blog.csoulode.com/post/VtVwfhDnb/">
+        </link>
+        <updated>2020-03-11T03:25:05.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+对于长度为5位的一个01串，每一位都可能是0或1，一共有32种可能。它们的前几个是：<br>
+00000<br>
+00001<br>
+00010<br>
+00011<br>
+00100<br>
+请按从小到大的顺序输出这32种01串。</p>
+<p>输入格式<br>
+本试题没有输入。</p>
+<p>输出格式<br>
+输出32行，按从小到大的顺序每行一个长度为5的01串。</p>
+<p>样例输出<br>
+00000<br>
+00001<br>
+00010<br>
+00011<br>
+&lt;以下部分省略&gt;</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    for(int i = 0; i &lt; 32; i++){
+        cout &lt;&lt; i / 16 % 2 &lt;&lt; i / 8 % 2 &lt;&lt; i / 4 % 2 &lt;&lt; i / 2 % 2 &lt;&lt; i % 2 &lt;&lt; endl;
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[蓝桥杯 BASIC-1 基础练习 闰年判断]]></title>
+        <id>https://blog.csoulode.com/post/bN7M1nIcF/</id>
+        <link href="https://blog.csoulode.com/post/bN7M1nIcF/">
+        </link>
+        <updated>2020-03-11T03:22:07.000Z</updated>
+        <content type="html"><![CDATA[<p>问题描述<br>
+给定一个年份，判断这一年是不是闰年。<br>
+当以下情况之一满足时，这一年是闰年：</p>
+<ol>
+<li>年份是4的倍数而不是100的倍数；</li>
+<li>年份是400的倍数。<br>
+其他的年份都不是闰年。</li>
+</ol>
+<p>输入格式<br>
+输入包含一个整数y，表示当前的年份。</p>
+<p>输出格式<br>
+输出一行，如果给定的年份是闰年，则输出yes，否则输出no。</p>
+<p>说明：当试题指定你输出一个字符串作为结果（比如本题的yes或者no，你需要严格按照试题中给定的大小写，写错大小写将不得分。</p>
+<p>样例输入<br>
+2013<br>
+样例输出<br>
+no</p>
+<p>样例输入<br>
+2016<br>
+样例输出<br>
+yes</p>
+<p>数据规模与约定<br>
+1990 &lt;= y &lt;= 2050。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    if((n % 4 == 0 &amp;&amp; n % 100 != 0) || n % 400 == 0){
+        cout &lt;&lt; &quot;yes&quot;;
+    }
+    else{
+        cout &lt;&lt; &quot;no&quot;;
+    }
+
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[蓝桥杯 BEGIN-4 入门训练 Fibonacci数列]]></title>
         <id>https://blog.csoulode.com/post/oBfh54MWL/</id>

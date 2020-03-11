@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PAT乙级 1001 害死人不偿命的(3n+1)猜想 | CSoulode</title>
+<title>蓝桥杯 BASIC-1 基础练习 闰年判断 | CSoulode</title>
 <link rel="shortcut icon" href="https://blog.csoulode.com/favicon.ico?v=1583897516745">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://blog.csoulode.com/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="PAT乙级 1001 害死人不偿命的(3n+1)猜想 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="蓝桥杯 BASIC-1 基础练习 闰年判断 | CSoulode - Atom Feed" href="https://blog.csoulode.com/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,9 +20,19 @@
 </script>
 
 
-    <meta name="description" content="卡拉兹(Callatz)猜想：
-对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传..." />
-    <meta name="keywords" content="PAT乙级(Basic Level)" />
+    <meta name="description" content="问题描述
+给定一个年份，判断这一年是不是闰年。
+当以下情况之一满足时，这一年是闰年：
+
+年份是4的倍数而不是100的倍数；
+年份是400的倍数。
+其他的年份都不是闰年。
+
+输入格式
+输入包含一个整数y，表示当前的年份。
+输出格式
+输出一行，..." />
+    <meta name="keywords" content="蓝桥杯(基础练习)" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -96,51 +106,61 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              PAT乙级 1001 害死人不偿命的(3n+1)猜想
+              蓝桥杯 BASIC-1 基础练习 闰年判断
             </h2>
             <div class="post-info">
               <span>
-                2020-03-09
+                2020-03-11
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
               
-                <a href="https://blog.csoulode.com/tag/pat-yi-ji-basic-level/" class="post-tag">
-                  # PAT乙级(Basic Level)
+                <a href="https://blog.csoulode.com/tag/lan-qiao-bei-ji-chu-lian-xi/" class="post-tag">
+                  # 蓝桥杯(基础练习)
                 </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>卡拉兹(Callatz)猜想：</p>
-<p>对任何一个正整数 n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把 (3n+1) 砍掉一半。这样一直反复砍下去，最后一定在某一步得到 n=1。卡拉兹在 1950 年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证 (3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
-<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过 1000 的正整数 n，简单地数一下，需要多少步（砍几下）才能得到 n=1？</p>
-<p>输入格式：<br>
-每个测试输入包含 1 个测试用例，即给出正整数 n 的值。</p>
-<p>输出格式：<br>
-输出从 n 计算到 1 需要的步数。</p>
-<p>输入样例：<br>
-3</p>
-<p>输出样例：<br>
-5</p>
+                <p>问题描述<br>
+给定一个年份，判断这一年是不是闰年。<br>
+当以下情况之一满足时，这一年是闰年：</p>
+<ol>
+<li>年份是4的倍数而不是100的倍数；</li>
+<li>年份是400的倍数。<br>
+其他的年份都不是闰年。</li>
+</ol>
+<p>输入格式<br>
+输入包含一个整数y，表示当前的年份。</p>
+<p>输出格式<br>
+输出一行，如果给定的年份是闰年，则输出yes，否则输出no。</p>
+<p>说明：当试题指定你输出一个字符串作为结果（比如本题的yes或者no，你需要严格按照试题中给定的大小写，写错大小写将不得分。</p>
+<p>样例输入<br>
+2013<br>
+样例输出<br>
+no</p>
+<p>样例输入<br>
+2016<br>
+样例输出<br>
+yes</p>
+<p>数据规模与约定<br>
+1990 &lt;= y &lt;= 2050。</p>
 <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
 using namespace std;
 
-int main()
-{
-  int n,step;
-  cin &gt;&gt; n;
-  while(n != 1)
-  {
-    if(n % 2 == 0) n=n/2;
-    else n = (3 * n + 1)/2;
-    step++;
-  }
-  cout &lt;&lt; step;
+int main(){
+    int n;
+    cin &gt;&gt; n;
+    if((n % 4 == 0 &amp;&amp; n % 100 != 0) || n % 400 == 0){
+        cout &lt;&lt; &quot;yes&quot;;
+    }
+    else{
+        cout &lt;&lt; &quot;no&quot;;
+    }
 
-  return 0;
+    return 0;
 }
 </code></pre>
 
@@ -152,6 +172,15 @@ int main()
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://blog.csoulode.com/post/oBfh54MWL/">
+              <h3 class="post-title">
+                蓝桥杯 BEGIN-4 入门训练 Fibonacci数列
+              </h3>
+            </a>
+          </div>
         
 
         
